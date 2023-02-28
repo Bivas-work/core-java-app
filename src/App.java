@@ -3,11 +3,14 @@
 import java.util.Arrays;
 
 import lambda.SampleFunctionalI;
+import leetcode.AddTwoNumber;
+import leetcode.Solution;
 
 public class App {
     public static void main(String[] args) throws Exception {
         //lambdaOperations();
-        streamAPIOperation();
+        //streamAPIOperation();
+        testLeetCode();
     }
 
     static void streamAPIOperation() {
@@ -26,5 +29,14 @@ public class App {
         };
         functionalI.sampleAbstractmethod("String A", "String B");
         functionalI.sampleAbstractmethod("String A", "String B");
+    }
+
+    static void testLeetCode() {
+        //AddTwoNumber obj = new AddTwoNumber();
+        //obj.prepareTwoNumbers();
+
+        Solution obj = new Solution();
+        int arr[] = new int[]{2,7,11,15};
+        obj.twoSum(arr, 9);
     }
 }
