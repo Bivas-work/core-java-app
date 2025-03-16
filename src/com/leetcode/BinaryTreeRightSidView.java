@@ -7,11 +7,23 @@ public class BinaryTreeRightSidView {
 
     List<Integer> result = new ArrayList<>();
 
-    private void bfs(TreeNode root, List<Integer> result) {
-
-    }
     public List<Integer> rightSideView(TreeNode root) {
-     return null;
+        List<Integer> result = new ArrayList<>();
+        rightView(root, result, 0);
+        return result;
+    }
+
+    public void rightView(TreeNode curr, List<Integer> result, int currDepth){
+        if(curr == null){
+            return;
+        }
+        if(currDepth == result.size()){
+            result.add(curr.val);
+        }
+
+        rightView(curr.right, result, currDepth + 1);
+        rightView(curr.left, result, currDepth + 1);
+
     }
 
     public static void main(String[] args) {
@@ -21,11 +33,11 @@ public class BinaryTreeRightSidView {
 
     public class TreeNode {
         int val;
-        CountGoodNodesBinaryTree.TreeNode left;
-        CountGoodNodesBinaryTree.TreeNode right;
+        BinaryTreeRightSidView.TreeNode left;
+        BinaryTreeRightSidView.TreeNode right;
         TreeNode() {}
         TreeNode(int val) { this.val = val; }
-        TreeNode(int val, CountGoodNodesBinaryTree.TreeNode left, CountGoodNodesBinaryTree.TreeNode right) {
+        TreeNode(int val, BinaryTreeRightSidView.TreeNode left, BinaryTreeRightSidView.TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
